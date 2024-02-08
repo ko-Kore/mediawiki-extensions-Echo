@@ -1,24 +1,24 @@
 @import 'mediawiki.ui/variables';
 
 // `!important` rules override the inline styles provides by clippable.
-@media all and ( max-width: @width-breakpoint-tablet ) {
+@media all and ( max-inline-size: @width-breakpoint-tablet ) {
 	.mw-echo-ui-overlay {
 		.oo-ui-clippableElement-clippable {
-			width: 100% !important;
-			max-width: none !important;
+			inline-size: 100% !important;
+			max-inline-size: none !important;
 		}
 
 		.mw-echo-ui-specialHelpMenuWidget-menu {
-			max-width: 70% !important;
+			max-inline-size: 70% !important;
 		}
 
 		.oo-ui-popupWidget-popup {
-			width: 100% !important;
+			inline-size: 100% !important;
 		}
 
 		.mw-echo-ui-notificationBadgeButtonPopupWidget-popup {
-			left: 1px !important;
-			right: 2px;
+			inset-inline-start: 1px !important;
+			inset-inline-end: 2px;
 		}
 	}
 }

@@ -7,10 +7,13 @@
 	background-color: @notification-item-background-read;
 	position: relative;
 	white-space: normal;
-	padding: 0.8em 1em 0.5em 1em;
+	padding-block-start: 0.8em;
+	padding-inline-end: 1em;
+	padding-block-end: 0.5em;
+	padding-inline-start: 1em;
 	box-sizing: border-box;
 	border: 1px solid #c8ccd1;
-	margin-bottom: -1px;
+	margin-block-end: -1px;
 
 	&:not( [ href ] ) {
 		// Items without a primary URL are not clickable
@@ -59,8 +62,8 @@
 		position: absolute;
 
 		img {
-			height: 30px;
-			width: 30px;
+			block-size: 30px;
+			inline-size: 30px;
 		}
 	}
 
@@ -68,8 +71,8 @@
 		display: block;
 		box-sizing: border-box;
 		// The icon is 30px
-		margin-left: 30px;
-		padding-left: 0.8em;
+		margin-inline-start: 30px;
+		padding-inline-start: 0.8em;
 
 		&-message {
 			line-height: 1.3em;
@@ -77,7 +80,7 @@
 			// button, so the message is not stretched past it.
 			// The 'mark as read' circle is placed with a right
 			// margin of -1em
-			padding-right: 1em;
+			padding-inline-end: 1em;
 			// break-word rules are inconsistent accross browsers
 			// these three rules should cover the main use cases
 			// with major browser support
@@ -91,7 +94,7 @@
 
 			&-body {
 				color: @notification-body-color;
-				margin-top: 4px;
+				margin-block-start: 4px;
 
 				// In the popup only, truncate the text to one-line
 				// with ellipses
@@ -105,14 +108,14 @@
 			display: flex;
 			align-items: flex-end;
 			font-size: 0.9em;
-			margin-top: 0.8em;
+			margin-block-start: 0.8em;
 
 			& > &-buttons.oo-ui-buttonSelectWidget {
 				display: flex;
 				overflow: hidden;
 
 				> .oo-ui-buttonOptionWidget {
-					min-width: 7em;
+					min-inline-size: 7em;
 					overflow: hidden;
 
 					.oo-ui-labelElement-label {
@@ -124,12 +127,12 @@
 			}
 
 			&-button {
-				margin-right: 1.2em;
+				margin-inline-end: 1.2em;
 			}
 
 			.mw-echo-ui-menuItemWidget-prioritized {
 				// Option widget already has some right padding
-				margin-right: 0.6em;
+				margin-inline-end: 0.6em;
 			}
 
 			&-menu {
@@ -156,24 +159,24 @@
 		float: right;
 		font-size: 1em;
 		// Compensate for the padding in the item widget
-		margin-top: -0.8em;
-		margin-right: -1em;
+		margin-block-start: -0.8em;
+		margin-inline-end: -1em;
 		padding: 0;
 
 		.mw-echo-ui-notificationItemWidget-bundled & {
-			margin-top: 0;
+			margin-block-start: 0;
 		}
 	}
 
 	// Table layout only for the content inside bundles
 	&-bundled {
 		display: table;
-		width: 100%;
+		inline-size: 100%;
 		padding: 0.5em;
 
 		.mw-echo-ui-notificationItemWidget-content {
 			display: table-row;
-			padding-left: 0.5em + 1.5em;
+			padding-inline-start: 0.5em + 1.5em;
 
 			.mw-echo-ui-notificationItemWidget {
 				// CSS table layout
@@ -188,21 +191,21 @@
 				// Positioning fixes for bundled items
 				&-icon {
 					position: relative;
-					padding-right: 0.5em;
+					padding-inline-end: 0.5em;
 
 					img {
-						height: 20px;
-						width: 20px;
+						block-size: 20px;
+						inline-size: 20px;
 					}
 				}
 
 				&-content-message {
 					display: table-cell;
-					padding-right: 0.5em;
-					width: 100%;
+					padding-inline-end: 0.5em;
+					inline-size: 100%;
 
 					&-header {
-						width: 100%;
+						inline-size: 100%;
 
 						&-wrapper {
 							position: relative;
@@ -237,7 +240,7 @@
 						float: none;
 						display: table-cell;
 						vertical-align: middle;
-						padding-right: 0.5em;
+						padding-inline-end: 0.5em;
 						white-space: nowrap;
 					}
 				}

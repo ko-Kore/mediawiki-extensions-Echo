@@ -2,12 +2,12 @@
 
 .mw-echo-ui-subGroupListWidget {
 	&:not( :first-child ) {
-		padding-top: @bundle-group-padding;
+		padding-block-start: @bundle-group-padding;
 	}
 
 	&-header {
 		display: table;
-		width: 100%;
+		inline-size: 100%;
 
 		&-row {
 			display: table-row;
@@ -17,7 +17,7 @@
 			}
 
 			&-title {
-				width: 100%;
+				inline-size: 100%;
 				vertical-align: bottom;
 				white-space: nowrap;
 
@@ -33,6 +33,6 @@
 	}
 
 	.mw-echo-ui-sortedListWidget {
-		margin-bottom: @bundle-group-padding / 2;
+		margin-block-end: @bundle-group-padding / 2;
 	}
 }

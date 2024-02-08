@@ -1,7 +1,7 @@
 .mw-echo-ui-actionMenuPopupWidget-menu {
 	&.oo-ui-menuSelectWidget {
-		// Override width: 100%; rule from OOUI
-		width: auto;
+		// Override inline-size: 100%; rule from OOUI
+		inline-size: auto;
 	}
 
 	// We put MenutItemWidgets in the popup menu, as we reuse the same widgets when they appear outside the popup.
@@ -14,7 +14,7 @@
 		}
 
 		&.oo-ui-labelElement:first-child {
-			margin-left: 0;
+			margin-inline-start: 0;
 		}
 	}
 }

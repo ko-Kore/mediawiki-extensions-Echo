@@ -4,10 +4,10 @@
 	&-circle {
 		border-radius: 50%;
 		box-sizing: border-box;
-		min-width: 10px;
-		width: @bundle-group-padding;
-		min-height: 10px;
-		height: @bundle-group-padding;
+		min-inline-size: 10px;
+		inline-size: @bundle-group-padding;
+		min-block-size: 10px;
+		block-size: @bundle-group-padding;
 		margin: @bundle-group-padding;
 
 		// Mark as read
@@ -23,9 +23,9 @@
 
 	// Override OOUI specific rule for frameless buttons that adds a ~2.5em padding-top
 	&.oo-ui-widget.oo-ui-widget-enabled.oo-ui-buttonElement.oo-ui-buttonElement-frameless > .oo-ui-buttonElement-button {
-		padding-top: 0;
+		padding-block-start: 0;
 		// Remove padding for dummy icon
-		padding-left: 0;
+		padding-inline-start: 0;
 	}
 
 	&.oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {

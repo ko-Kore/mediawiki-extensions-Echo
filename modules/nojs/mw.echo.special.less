@@ -2,11 +2,11 @@
 @import '../echo.variables.less';
 
 .mw-echo-special-container {
-	max-width: 600px;
+	max-inline-size: 600px;
 }
 
 .client-js .mw-echo-special-nojs {
-	min-height: 5em;
+	min-block-size: 5em;
 	/* @embed */
 	background-image: url( ../../images/pending.gif );
 
@@ -24,9 +24,9 @@
 	display: none;
 }
 
-@media all and ( min-width: @specialpage-hd-width ) {
+@media all and ( min-inline-size: @specialpage-hd-width ) {
 	.client-js #mw-content-text {
-		margin-top: 2em;
+		margin-block-start: 2em;
 	}
 }
 
@@ -38,18 +38,21 @@
 #firstHeading {
 	.mw-echo-special-header-link {
 		display: block;
-		height: 19px;
-		width: 19px;
+		block-size: 19px;
+		inline-size: 19px;
 	}
 }
 
 .mw-echo-date-section {
-	border-bottom: 1px solid @border-color;
-	margin: 20px 0 5px 0;
+	border-block-end: 1px solid @border-color;
+	margin-block-start: 20px;
+	margin-inline-end: 0;
+	margin-block-end: 5px;
+	margin-inline-start: 0;
 	color: @grey-light;
 	display: inline-block;
-	width: 100%;
-	padding-bottom: 0.5em;
+	inline-size: 100%;
+	padding-block-end: 0.5em;
 }
 
 .mw-echo-date-section-text {
@@ -63,7 +66,7 @@ ul.mw-echo-special-notifications {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	width: 100%;
+	inline-size: 100%;
 
 	div.mw-htmlform-submit-buttons {
 		margin: 0;
@@ -71,17 +74,20 @@ ul.mw-echo-special-notifications {
 }
 
 .mw-echo-special-navbar-top {
-	margin-bottom: 10px;
+	margin-block-end: 10px;
 }
 
 .mw-echo-special-navbar-bottom {
-	margin-top: 20px;
-	padding-top: 10px;
-	border-top: 1px solid @border-color;
+	margin-block-start: 20px;
+	padding-block-start: 10px;
+	border-block-start: 1px solid @border-color;
 }
 
 .mw-echo-notification {
-	padding: 30px 40px 15px 10px;
+	padding-block-start: 30px;
+	padding-inline-end: 40px;
+	padding-block-end: 15px;
+	padding-inline-start: 10px;
 
 	.mw-echo-markAsReadButton {
 		display: none;
@@ -97,7 +103,10 @@ ul.mw-echo-special-notifications {
 	display: inline-block;
 
 	button.oo-ui-buttonElement-button {
-		padding: 2px 12px 2px 12px;
+		padding-block-start: 2px;
+		padding-inline-end: 12px;
+		padding-block-end: 2px;
+		padding-inline-start: 12px;
 	}
 
 	// HACK: temporary workaround for T136024
@@ -123,7 +132,7 @@ ul.mw-echo-special-notifications {
 		&-unread {
 			color: @color-base;
 			background-color: transparent;
-			padding-right: 0;
+			padding-inline-end: 0;
 
 			.mw-echo-title {
 				font-weight: bold;
@@ -147,7 +156,7 @@ div.mw-htmlform-ooui-wrapper {
 	margin: 0;
 }
 
-@media all and ( max-width: ( @specialpage-hd-width - 1 ) ) {
+@media all and ( max-inline-size: ( @specialpage-hd-width - 1 ) ) {
 	/* stylelint-disable-next-line selector-class-pattern */
 	.pre-content.heading-holder {
 		// Center 'preferences' in mobile special page
